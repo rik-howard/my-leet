@@ -1,0 +1,62 @@
+#!/bin/bash
+
+padded_ordinal () {
+    s=$ordinal
+    s=0000$ordinal
+    s=${s: -4}
+    s=a$s
+    echo $s
+}
+
+snaked_problem () {
+    s=$(echo $problem | tr ' ' _)
+    s=${s,,}
+    echo $s
+}
+
+kebabbed_problem () {
+    s=$(echo $problem | tr ' ' -)
+    s=${s,,}
+    echo $s
+}
+
+isodate () {
+    date +%Y-%m-%d
+}
+
+home=$(dirname $(dirname $(dirname $(readlink -f $0))))
+base=$home/java
+tgtfon=$base/src
+tptfon=$home/bash/template/java
+
+topic=$1
+ordinal=$2
+problem=$3
+returning=$4
+method=$5
+params=$6
+boxing=$7
+
+# make folder
+mkdir -p $tgtfon/$(padded_ordinal)_$(snaked_problem)
+
+# copy template to folder
+if ! test -f $tgtfon/$(padded_ordinal)_$(snaked_problem)/README.md
+then cp $tptfon/* $tgtfon/$(padded_ordinal)_$(snaked_problem)
+fi
+
+# replace tokens in template copy
+sed -i -r -e "s/\\$.topic./${topic}/g"                       $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.ordinal./${ordinal}/g"                   $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.problem./${problem}/g"                   $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.returning./${returning}/g"               $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.method./${method}/g"                     $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.params./${params}/g"                     $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.boxing./${boxing}/g"                     $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.padded_ordinal./$(padded_ordinal)/g"     $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.snaked_problem./$(snaked_problem)/g"     $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.kebabbed_problem./$(kebabbed_problem)/g" $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+sed -i -r -e "s/\\$.isodate./$(isodate)/g"                   $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
+
+# append to read-me
+echo "| $topic | $ordinal | $problem | [•](src/$(padded_ordinal)_$(snaked_problem)/README.md) |   ✗    |" >> $base/README.md

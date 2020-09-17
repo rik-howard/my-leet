@@ -1,0 +1,22 @@
+#!/bin/bash
+
+data="
+    junit               junit                    4.12
+    org/junit/jupiter   junit-jupiter-api        5.7.0
+    org/junit/jupiter   junit-jupiter-engine     5.7.0
+    org/junit/jupiter   junit-jupiter-params     5.7.0
+    org/junit/platform  junit-platform-commons   1.7.0
+    org/junit/platform  junit-platform-engine    1.7.0
+    org/junit/platform  junit-platform-launcher  1.7.0
+"
+
+root=https://repo1.maven.org/maven2
+target=java/lib
+
+echo "$data" | egrep -v ^$ | while read group artifact version
+do
+    source=$root/$group/$artifact/$version/$artifact-$version.jar
+    if ! test -f $target/$artifact-$version.jar
+    then wget $source --directory-prefix=$target --quiet
+    fi
+done
