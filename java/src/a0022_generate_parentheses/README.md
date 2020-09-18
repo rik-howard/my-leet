@@ -10,5 +10,6 @@ Java
 * [Testament](Testament.java)
 
 Leet says:
+
 * Runtime: 12 ms, faster than 6.53% of Java online submissions for Generate Parentheses.
 * Memory Usage: 39.6 MB, less than 62.11% of Java online submissions for Generate Parentheses.
