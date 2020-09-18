@@ -1,4 +1,6 @@
 
 .idea
+*.iml
+.directory
 tmp
 lib
