@@ -8,5 +8,4 @@ This project presents some algorithms.  The problems are taken from [LeetCode](h
 ## [Java](java/README.md)
 
 
-## JavaScript
-TBC (javascript/README.md)
+## [JavaScript](javascript/README.md)
