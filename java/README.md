@@ -11,7 +11,7 @@
 |   ✓    | Algorithms |       3 | Longest Substring without Repeating Characters | [•](src/a0003_longest_substring/README.md)    |
 |   ✓    | Algorithms |       7 | Reverse Integer                                | [•](src/a0007_reverse_integer/README.md)      |
 |   ✓    | Algorithms |      12 | Integer to Roman                               | [•](src/a0012_integer_to_roman/README.md)     |
-|   ✓    | Algorithms |      13 | Add Two Numbers                                | [•](src/a0013_roman_to_integer/README.md)     |
+|   ✓    | Algorithms |      13 | Roman to Integer                               | [•](src/a0013_roman_to_integer/README.md)     |
 |   ✓    | Algorithms |      22 | Generate Parentheses                           | [•](src/a0022_generate_parentheses/README.md) |
 |   ✓    | Algorithms |      46 | Permutations                                   | [•](src/a0046_permutations/README.md)         |
 
