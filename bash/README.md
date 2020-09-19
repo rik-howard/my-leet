@@ -7,3 +7,5 @@
 
     intro-java-libraries
     intro-java-problem Algorithms 0 "The Alg" "int" theAlg "int n" Integer
+
+    intro-javascript-problem Algorithms 0 "The Alg" theAlg n
