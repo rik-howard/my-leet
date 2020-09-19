@@ -20,28 +20,28 @@ function testSpiralOrderD () {
     let original = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]];
     let expected = [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7];
     let actual = Solution.spiralOrder (original);
-    assert.deepEqual (expected, actual);
+    assert.deepEqual (actual, expected);
 }
 
 function testSpiralOrderG () {
     let original = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
     let expected = [1, 2, 3, 6, 9, 8, 7, 4, 5];
     let actual = Solution.spiralOrder (original);
-    assert.deepEqual (expected, actual);
+    assert.deepEqual (actual, expected);
 }
 
 function testSpiralOrderH () {
     let original = [[0, 1], [2, 3], [4, 5]];
     let expected = [0, 1, 3, 5, 4, 2];
     let actual = Solution.spiralOrder (original);
-    assert.deepEqual (expected, actual);
+    assert.deepEqual (actual, expected);
 }
 
 function testSpiralOrderV () {
     let original = [[0, 1], [2, 3]];
     let expected = [0, 1, 3, 2];
     let actual = Solution.spiralOrder (original);
-    assert.deepEqual (expected, actual);
+    assert.deepEqual (actual, expected);
 }
 
 function testSpiralOrderC () {

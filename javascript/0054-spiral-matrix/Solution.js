@@ -1,23 +1,24 @@
 
-module.exports = {
+/**
+ * @param {number [] []} matrix
+ * @return {number []}
+ */
 
-    /**
-     * @param {number [] []} matrix
-     * @return {number []}
-     */
-    spiralOrder: function (matrix) {
-        if (Array.isArray (matrix))
-            if (isRectangular (matrix)) return spiral (matrix);
-            else throw `not rectangular: ${matrix}`;
-        else throw `not an array: ${matrix}`;
-    }
-
+exports.spiralOrder = function (matrix) {
+    return solution (matrix);
 }
 
 /*
  * Row = [field: field ∊ Natural]
  * Matrix = [row: row ∊ Row]
  */
+
+function solution (matrix) {
+    if (Array.isArray (matrix))
+        if (isRectangular (matrix)) return spiral (matrix);
+        else throw `not rectangular: ${matrix}`;
+    else throw `not an array: ${matrix}`;
+}
 
 // Matrix → Row
 function spiral (matrix) {
