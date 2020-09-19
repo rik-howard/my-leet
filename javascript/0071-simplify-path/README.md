@@ -17,22 +17,22 @@ JavaScript: from the folder with this read-me,
 
 ### Scratch
 
-    while length (absolute) > 0
-        if matches (absolute, ^/+):
-            absolute = absolute / (^/+)
-            if length (absolute) > 0:
-                push (/, canonical)
-            now
-        else if matches (absolute, ^..):
-            absolute = absolute / (^..)
-            junk = pop (canonical)
-        else if matches (absolute, ^.):
-            absolute = absolute / (^.)
-        else if matches (absolute, ^[a-z]+):
-            absolute = absolute / (^[a-z]+)
-            push (^[a-z]+, canonical)
+    canonical = []
+    absolute = normal (path)  // only single slashes, always ends with slash
 
-    return canonical
+    while length (absolute) > 1
+        if matches (absolute, ^/./):
+            absolute = absolute / (^.)
+        else if matches (absolute, ^/../):
+            absolute = absolute / (^..)
+            pop (canonical, junk)
+        else if matches (absolute, ^/[^/]+/):
+            absolute = absolute / (^[^/]+)
+            push (^[^/]+, canonical)
+        else: throw
+
+    canonical = canonical.join ()
+    return canonical == ""? "/": canonical
 
 REPL
 
