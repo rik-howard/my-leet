@@ -59,4 +59,4 @@ sed -i -r -e "s/\\$.kebabbed_problem./$(kebabbed_problem)/g" $tgtfon/$(padded_or
 sed -i -r -e "s/\\$.isodate./$(isodate)/g"                   $tgtfon/$(padded_ordinal)_$(snaked_problem)/*
 
 # append to read-me
-echo "| $topic | $ordinal | $problem | [•](src/$(padded_ordinal)_$(snaked_problem)/README.md) |   ✗    |" >> $base/README.md
+echo "|   ✗    | $topic | $ordinal | $problem | [•](src/$(padded_ordinal)_$(snaked_problem)/README.md) |" >> $base/README.md

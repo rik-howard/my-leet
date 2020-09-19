@@ -1,4 +1,3 @@
-
 package $(padded_ordinal)_$(snaked_problem);
 
 import org.junit.Test;
