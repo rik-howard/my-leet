@@ -8,6 +8,7 @@ data="
     org/junit/platform  junit-platform-commons   1.7.0
     org/junit/platform  junit-platform-engine    1.7.0
     org/junit/platform  junit-platform-launcher  1.7.0
+    org/hamcrest        hamcrest-all             1.3
 "
 
 root=https://repo1.maven.org/maven2
