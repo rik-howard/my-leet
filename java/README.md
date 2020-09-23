@@ -25,3 +25,4 @@
 | File: Project Structure: Modules: Dependencies: +: Jar    | /home/rik/studio/project/my-leet/java/lib     |
 
 ✓ ✗
+|   ✗    | Algorithms | 14 | Longest Common Prefix | [•](src/a0014_longest_common_prefix/README.md) |
